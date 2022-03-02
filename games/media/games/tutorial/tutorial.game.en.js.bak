@@ -132,9 +132,9 @@ undum.game.situations = {
 		<p>―¡Camarada!― dice gritando ―¡Hora de las Sacudidas Físicas!</p>\
 		<p>Respiras hondo para tranquilizarte y borras de tú rostro la expresión de sorpresa y\
 		asco, y la sustituyes por otra de completa neutralidad.</p>\
-		<br>\
-        <p class='transient'>Click <a href='hub'>this link to\
-        continue...</a></p>",
+        <p class='transient'>The 'Different Kinds of Links' topic has more\
+        about these links.\
+        Let's return to the <a href='hub'>topic list</a>.</p>",
         {
             heading: "Levantarte a cerrar la ventana.",
             diplayOrder: 2,
