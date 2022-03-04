@@ -40,8 +40,11 @@ undum.game.situations = {
 		apagada, pero eso es imposible, sabes perfectamente que El Partido (Socing)\
 		la controla: ven y escuchan a través de ella.\
 		</p>\
-        <p class='transient'>Click <a href='hub'>this link to\
-        continue...</a></p>"
+		<br>\
+		<p class='transient'><a href='ventana'>Cerrar ventana</a></p>\
+		<br>\
+		<p class='transient'><a href='cama'>Seguir durmiendo</a></p>\
+		"
     ),
 
     // NB: The 'hub' situation which is the main list of topics, is
@@ -100,7 +103,7 @@ undum.game.situations = {
             }
         }
     ),
-    links: new undum.SimpleSituation(
+    ventana: new undum.SimpleSituation(
         "<p>Te decides a cerrar la ventana.</p>\
 		<br>\
 		Al incorporarte sientes molestias\
@@ -133,15 +136,14 @@ undum.game.situations = {
 		<p>Respiras hondo para tranquilizarte y borras de tú rostro la expresión de sorpresa y\
 		asco, y la sustituyes por otra de completa neutralidad.</p>\
 		<br>\
-        <p class='transient'>Click <a href='hub'>this link to\
-        continue...</a></p>",
+        <p class='transient'><a href='desayuno'>Continuar</a></p>",
         {
             heading: "Levantarte a cerrar la ventana.",
             diplayOrder: 2,
             tags: ["topic"]
         }
     ),
-    sticky: new undum.SimpleSituation(
+    cama: new undum.SimpleSituation(
         "<p>Decides quedarte en la cama y te quedas completamente dormido.</p>\
         <br>\
         <p>―¡Camarada! ¡Despierte!― oyes una voz gritando proveniente del salón ―¡Camarada levántese!</p>\
@@ -164,38 +166,50 @@ undum.game.situations = {
 		<br>\
 		―Vamos con el calentamiento― dice al fin, de manera serena e imponente.\
 		<br>\
-        <img src='' class='float_left'>\
-        ",
+        <p class='transient'><a href='desayuno'>Continuar</a></p>",
         {
             tags: ["topic"],
             displayOrder: 3,
             heading: "Quedarte en la cama"
         }
     ),
-    oneshot: new undum.SimpleSituation(
-        "<p>There is one final option for links. If you give a link\
-        the <em>once</em> CSS class, then that link will disappear\
-        after it is clicked. This is  used (as in\
-        <a href='./one-time-action' class='once'>this link</a>) for\
-        actions that you only want to be possible once. There is no\
-        point using 'once' on situation links because they'll be turned\
-        into text as soon as you click them anyway (unless they are also\
-        <em>sticky</em>, of course).</p><p>Once links are useful\
-        for actions such as examining an object more carefully. You\
-        don't want lots of repeated descriptions, so making the link\
-        a <em>once</em> link is more user friendly.</p>\
-        <p>If you have more than one link to the same action, then all\
-        matching links will be removed, so you don't have to worry about\
-        the player having an alternative way to carry out the action.</p>\
-        <p class='transient'>After you've clicked the link, let's\
-        <a href='hub'>move on</a>.</p>",
+    desayuno: new undum.SimpleSituation(
+        "<p>Al terminar de hacer ejercicio sientes como si el hambre te apuñalara el estómago. Te \
+        diriges al armarito donde guardas la comida y ves las baldas desnudas donde yace el último \
+        cacho de pan. Repites la misma acción para ver qué queda en el frigo, y ante tus ojos se \
+        repite la misma escena: un profanado y frío mausoleo en el que solo queda una cápsula de \
+        margarina.</p>\
+		<br>\
+        Te sientas en la mesita del salón. Crees que, por la posición de la telepantalla, ese sitio\
+        escapa a su constante vigilancia. Engulles el pan duro con la insípida margarina. Abres el \
+        cajón de la mesa y ves un cuaderno y un lápiz.</p>\
+        <br>\
+        <p><a href='./coger-cuaderno' class='once'>Coger cuaderno</a></p>\
+		<p class='transient'><a href='hub'>Continuar</a>.</p>\
+        ",
         {
             actions: {
-                "one-time-action": "<p>As I said, one time actions are\
-                                   mostly used to describe something in\
-                                   more detail, where you don't want the\
-                                   same descriptive text repeated over and\
-                                   over</p>"
+                "coger-cuaderno": "<p>Coges el cuaderno, está muy manoseado: la cubierta casi ha perdido el letrero y las\
+                                   esquinas están rotas. El lápiz tampoco se queda atrás: está casi por la mitad y ha\
+                                   perdido la goma de borrar.</p>\
+								   <br>\
+								   <p>Al abrir el cuaderno redescubres una foto de tu esposa (o esposo). Hace un año que\
+								   no os veis, ni siquiera sabes si sigue con vida. Recuerdas que os casasteis por\
+								   conveniencia y deber por y para el partido. No están permitidos los matrimonios por\
+								   amor y mucho menos mantener relaciones sexuales por placer. Solo está permitido\
+								   para generar descendencia, con el objetivo de que El Partido pueda moldear a las\
+								   nuevas generaciones con sus ideales desde que nacen. Convertirlos en espías para \
+								   que delaten a sus padres si sospechan que estos no son fieles al Socing.</p>\
+								   <br>\
+								   <p>Y ese fue el motivo de vuestra separación: muchos fríos y patéticos intentos sin\
+								   resultados por una causa que no compartíais.</p>\
+								   <br>\
+								   <p>Finalmente abres el cuaderno por la última página sin usar y garabateas varias\
+								   veces: “abajo el partido”.</p>\
+								   <p class='transient'><a href='hub'>Continuar</a>.</p>",
+			    "no-coger-cuaderno": "<p>Pasas de coger el cuaderno. Recoges el plato sin limpiarlo porque no has\
+									desperdiciado ni una sola miga.</p>\
+									<p class='transient'><a href='hub'>Continuar</a>.</p>"
             }
         }
     ),
