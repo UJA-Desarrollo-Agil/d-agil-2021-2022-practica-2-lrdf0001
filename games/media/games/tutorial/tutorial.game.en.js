@@ -170,7 +170,11 @@ undum.game.situations = {
         {
             tags: ["topic"],
             displayOrder: 3,
-            heading: "Quedarte en la cama"
+            heading: "Quedarte en la cama",
+			enter: function(character, system, from) {
+						system.setQuality("crimentalidad", character.qualities.crimentalidad+1);
+					}
+			
         }
     ),
     desayuno: new undum.SimpleSituation(
@@ -185,28 +189,15 @@ undum.game.situations = {
         cajón de la mesa y ves un cuaderno y un lápiz.</p>\
         <br>\
         <p><a href='./coger-cuaderno' class='once'>Coger cuaderno</a></p>\
-		<p class='transient'><a href='hub'>Continuar</a>.</p>\
+		<p class='transient'><a href='salir-calle'>Continuar</a>.</p>\
         ",
         {
             actions: {
-                "coger-cuaderno": "<p>Coges el cuaderno, está muy manoseado: la cubierta casi ha perdido el letrero y las\
-                                   esquinas están rotas. El lápiz tampoco se queda atrás: está casi por la mitad y ha\
-                                   perdido la goma de borrar.</p>\
-								   <br>\
-								   <p>Al abrir el cuaderno redescubres una foto de tu esposa (o esposo). Hace un año que\
-								   no os veis, ni siquiera sabes si sigue con vida. Recuerdas que os casasteis por\
-								   conveniencia y deber por y para el partido. No están permitidos los matrimonios por\
-								   amor y mucho menos mantener relaciones sexuales por placer. Solo está permitido\
-								   para generar descendencia, con el objetivo de que El Partido pueda moldear a las\
-								   nuevas generaciones con sus ideales desde que nacen. Convertirlos en espías para \
-								   que delaten a sus padres si sospechan que estos no son fieles al Socing.</p>\
-								   <br>\
-								   <p>Y ese fue el motivo de vuestra separación: muchos fríos y patéticos intentos sin\
-								   resultados por una causa que no compartíais.</p>\
-								   <br>\
-								   <p>Finalmente abres el cuaderno por la última página sin usar y garabateas varias\
-								   veces: “abajo el partido”.</p>\
-								   <p class='transient'><a href='hub'>Continuar</a>.</p>",
+                "coger-cuaderno":function(character, system, action) {
+										system.setQuality("crimentalidad", character.qualities.crimentalidad+1);
+										system.write($("#cuaderno").html());
+									}
+				,
 			    "no-coger-cuaderno": "<p>Pasas de coger el cuaderno. Recoges el plato sin limpiarlo porque no has\
 									desperdiciado ni una sola miga.</p>\
 									<p class='transient'><a href='hub'>Continuar</a>.</p>"
@@ -241,91 +232,76 @@ undum.game.situations = {
             }
         }
     ),
-    "quality-types": new undum.SimpleSituation(
-        "<p>Not all the qualities in the character panel are displayed as\
-        numeric. Internally they are all numeric, but different qualities\
-        get to choose how to display themselves. So 'Luck', for example, is\
-        displayed as words (based on the FUDGE RPG's adjective scale),\
-        and 'Novice' is using just a check-mark.</p>\
-        \
-        <p>To see how Luck changes, try using this\
-        <a href='./luck-boost'>luck-boosting action</a> or this\
-        <a href='./luck-reduce'>luck-reducing action</a>. Notice that\
-        luck uses a numeric bonus when it runs out of words. There are a range\
-        of different display types provided with Undum, and you can easily\
-        add your own too.</p>\
-        \
-        <p>When you <a href='character-text'>leave this situation</a>,\
-        I'll set 'Novice' to zero. Watch\
-        the character panel, and you'll see that Novice decides it doesn't\
-        need to be displayed any more and will be removed. You will also see\
-        that when the last\
-        quality in a group is removed ('Novice' is in the 'Progress' group),\
-        then the group heading is also removed. You can tell Undum what\
-        group each quality belongs to, and what order they should be listed.\
-        <p>",
+    "salir-calle": new undum.SimpleSituation(
+        "<br>\
+		<p>Una vez saciada tu hambre te pones el mono azul de trabajo, y te sirves un trago de la\
+        botella de ginebra que está junto a la entrada.</p>\
+		<br>\
+        <p>Sales a la escaleras del edificio. Las paredes son grises y la pintura se cae a trozos. La\
+        ausencia de ventanas hace que no haya ventilación y huela a algo parecido a verduras\
+        cocidas. Por ello la iluminación depende de unos pequeños tubos de luz que\
+        parpadean aritmicamente, provocando que todo tome un tono gris y triste.</p>\
+		<br>\
+		<p>Bajas las escaleras y en el último descansillo ves un gran póster. En él aparece el rostro de un\
+        hombre con un espeso bigote y con unas facciones toscas y apuestas. “El Gran Hermano\
+        vela por ti” lees en la parte inferior. Observándolo mejor te da la sensación de que su mirada\
+        te sigue, mires por donde lo mires, pongas donde te pongas.</p>\
+		<img src='media/img/poster.jpg' class='float_right' width='300'>\
+        <br>\
+        <p>Cuando sales a la calle te pones en marcha hacia Ministerio de la Verdad, lugar en el que\
+        trabajas corrigiendo y falseando informes para que parezca que todo lo que diga el Gran\
+        Hermano sea verdad. Por ejemplo, si la producción de zapatos bajó un tanto por ciento\
+        respecto a la semana anterior, y el Gran Hermano dijo que subiría la producción, habría que\
+        modificar todos los escritos de esa semana poniendo que la oferta fue mucho menor, así al\
+        comparar entre las dos semanas se notará cierta mejoría.</p>\
+		<br>\
+        <p>Caminas sin prisa pero procurando no demorarte demasiado. Nadie pasa más tiempo en la\
+        calle del necesario, lo justo para cumplir con las obligaciones y necesidades que se supone\
+		que debes cubrir. Ya que cualquier otro comportamiento que no sea el esperado, será\
+		considerado sospechoso y atraerá la atención de las numerosas telepantallas que hay por\
+		las calles. Aumentando las probabilidades de ser detenido.</p>\
+		<br>\
+		<p>Pasas por delante de una gran telepantalla de la que suena el himno del Partido:</p>\
+		<p class='transient'><a href='telepantalla'>Mirar telepantalla</a>.</p>\
+		<br>\
+		<p class='transient'><a href=''>Seguir tu camino</a>.</p>\
+		"/*,
         {
             actions: {
-                "luck-boost": function(character, system, action) {
-                    system.setQuality("luck", character.qualities.luck+1);
-                },
-                "luck-reduce": function(character, system, action) {
-                    system.setQuality("luck", character.qualities.luck-1);
+                "seguir-camno": "<p>Sigues tu camino sin problema alguno.</p>\
+								<p class='transient'><a href=''>Continuar</a>.</p>\
+								"
                 }
-            },
-            exit: function(character, system, to) {
-                system.setQuality("novice", 0);
-            }
-        }
+        }*/
     ),
-    "character-text": new undum.SimpleSituation(
-        "<h1>Character Text</h1>\
-        <p>Above the list of qualities is a short piece of text, called\
-        the character-text. This describes the character in some way. It\
-        can be set by any action or when entering or leaving a situation.\
-        It is just regular HTML content, as for all text in Undum. It can\
-        also contain Undum links, so this is another place you can put\
-        actions that the character can carry out over a long period of time.\
-        </p>\
-        <p class='transient'>Let's go back to the\
-        <a href='hub'>topic list</a>. As you do, I'll change the\
+    "telepantalla": new undum.SimpleSituation(
+        "<p>Te detienes a mirarla.</p>\
+		<br>\
+        <p>Por alguna extraña razón la música y los colores de las imágenes atraen tu atención.\
+        En ellas se suceden una serie de lemas junto con imágenes del Gran Hermano:</p>\
+		<br>\
+        <h2>La Guerra es Paz</h2>\
+        <h2>La Libertad es Esclavitud</h2>\
+        <h2>La Ignorancia es Fuerza</h2>\
+		<br>\
+        <p>Ante esta visión no eres capaz de controlarte y poner una expresión de \
+        preocupación y miedo. Te vuelves rápidamente y sigues tu camino.</p>\
         character text. Notice that it is highlighted, just the same as\
-        when a quality is altered.</p>",
+        when a quality is altered.</p>\
+		<br>\
+		<p class='transient'><a href=''>Continuar</a>.\
+		",
         {
-            exit: function(character, system, to) {
-                system.setCharacterText(
-                    "<p>We're nearing the end of the road.</p>"
-                );
+            enter: function(character, system, from) {
+                system.setQuality("crimentalidad", character.qualities.crimentalidad+1);
             }
         }
     ),
-    progress: new undum.SimpleSituation(
-        "<p>Sometimes you want to make the change in a quality into a more\
-        significant event. You can do this by animating the change in\
-        quality. If you <a href='./boost-stamina-action'>boost your\
-        stamina</a>, you will see the stamina change in the normal\
-        way in the character panel. But you will also see a progress\
-        bar appear and animate below.</p>",
-        {
-            tags: ["topic"],
-            heading: "Showing a Progress Bar",
-            displayOrder: 5,
-            actions: {
-                // I'm going indirect here - the link carries out an
-                // action, which then uses doLink to directly change
-                // the situation.  This isn't the recommended way (I
-                // could have just changed situation in the link), but
-                // it illustrates the use of doLink.
-                "boost-stamina-action": function(character, system, action) {
-                    system.doLink("boost-stamina");
-                }
-            },
-            exit: function(character, system, to) {
-                system.animateQuality(
-                    'stamina', character.qualities.stamina+1
-                );
-            }
-        }
+    "vifurcacion": new undum.SimpleSituation(
+        "<p>Después de un par de minutos andando tu camino puede tomar dos direcciones:\
+		<a href='plaza'>ir a la plaza</a> donde se encuentra el patíbulo, o bien, \
+		seguir por una <a href='callejon'>calle secundaria.</a>\
+        ",
     ),
     "boost-stamina": new undum.SimpleSituation(
         "<p>\
@@ -453,14 +429,15 @@ undum.game.start = "start";
  * possess. We don't have to be exhaustive, but if we miss one out then
  * that quality will never show up in the character bar in the UI. */
 undum.game.qualities = {
-    crimentalidad: new undum.IntegerQuality( "Crimentalidad", {priority:"0001", group:'stats'})
-	/*
+    
+	crimentalidad: new undum.IntegerQuality( 
+		"Crimentalidad", {priority:"0001", group:'stats'}),
 	skill: new undum.IntegerQuality(
         "Skill", {priority:"0001", group:'stats'}
     ),
     stamina: new undum.NumericQuality(
         "Stamina", {priority:"0002", group:'stats'}
-    ),
+    )/*,
     luck: new undum.FudgeAdjectivesQuality( // Fudge as in the FUDGE RPG
         "<span title='Skill, Stamina and Luck are reverently borrowed from the Fighting Fantasy series of gamebooks. The words representing Luck are from the FUDGE RPG. This tooltip is illustrating that you can use any HTML in the label for a quality (in this case a span containing a title attribute).'>Luck</span>",
         {priority:"0003", group:'stats'}
@@ -481,8 +458,8 @@ undum.game.qualities = {
  * the end. It is an error to have a quality definition belong to a
  * non-existent group. */
 undum.game.qualityGroups = {
-    stats: new undum.QualityGroup(null, {priority:"0001"})
-    //progress: new undum.QualityGroup('Progress', {priority:"0002"})
+    stats: new undum.QualityGroup(null, {priority:"0001"}),
+    progress: new undum.QualityGroup('Progress', {priority:"0002"})
 	
 };
 
@@ -491,9 +468,10 @@ undum.game.qualityGroups = {
  * to configure the character at the start of play. */
 undum.game.init = function(character, system) {
 	character.qualities.crimentalidad = 0;
-	/*
+	
     character.qualities.skill = 12;
     character.qualities.stamina = 12;
+	/*
     character.qualities.luck = 0;
     character.qualities.novice = 1;
     character.qualities.inspiration = 0;
