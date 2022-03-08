@@ -262,63 +262,113 @@ undum.game.situations = {
 		las calles. Aumentando las probabilidades de ser detenido.</p>\
 		<br>\
 		<p>Pasas por delante de una gran telepantalla de la que suena el himno del Partido:</p>\
-		<p class='transient'><a href='telepantalla'>Mirar telepantalla</a>.</p>\
+		<p class='transient'><a href='./mirar_pantalla' class='once'>Mirar telepantalla</a>.</p>\
 		<br>\
-		<p class='transient'><a href=''>Seguir tu camino</a>.</p>\
-		"/*,
+		<p class='transient'><a href='vifurcacion'>Seguir tu camino</a>.</p>",
         {
             actions: {
-                "seguir-camno": "<p>Sigues tu camino sin problema alguno.</p>\
-								<p class='transient'><a href=''>Continuar</a>.</p>\
-								"
-                }
-        }*/
-    ),
-    "telepantalla": new undum.SimpleSituation(
-        "<p>Te detienes a mirarla.</p>\
-		<br>\
-        <p>Por alguna extraña razón la música y los colores de las imágenes atraen tu atención.\
-        En ellas se suceden una serie de lemas junto con imágenes del Gran Hermano:</p>\
-		<br>\
-        <h2>La Guerra es Paz</h2>\
-        <h2>La Libertad es Esclavitud</h2>\
-        <h2>La Ignorancia es Fuerza</h2>\
-		<br>\
-        <p>Ante esta visión no eres capaz de controlarte y poner una expresión de \
-        preocupación y miedo. Te vuelves rápidamente y sigues tu camino.</p>\
-        character text. Notice that it is highlighted, just the same as\
-        when a quality is altered.</p>\
-		<br>\
-		<p class='transient'><a href=''>Continuar</a>.\
-		",
-        {
-            enter: function(character, system, from) {
-                system.setQuality("crimentalidad", character.qualities.crimentalidad+1);
-            }
+                "mirar_pantalla":function(character, system, action) {
+										system.setQuality("crimentalidad", character.qualities.crimentalidad+1);
+										system.write($("#pantalla").html());
+									}
+			}
         }
     ),
+    
     "vifurcacion": new undum.SimpleSituation(
         "<p>Después de un par de minutos andando tu camino puede tomar dos direcciones:\
 		<a href='plaza'>ir a la plaza</a> donde se encuentra el patíbulo, o bien, \
 		seguir por una <a href='callejon'>calle secundaria.</a>\
         ",
     ),
-    "boost-stamina": new undum.SimpleSituation(
-        "<p>\
-        <img src='media/games/tutorial/woodcut3.png' class='float_right'>\
-        The progress bar is also useful in situations where the\
-        character block is displaying just the whole number of a quality,\
-        whereas some action changes a fraction. If the quality is displaying\
-        the character's level, for example, you might want to show a progress\
-        bar to indicate how near the character is to levelling up.</p>\
-        \
-        <p>After a few seconds, the progress bar disappears, to keep the\
-        focus on the text. Undum isn't designed for games where a lot of\
-        statistic management is needed. If you want a change to be part\
-        of the permanent record of the game, then write it in text.</p>\
-        \
-        <p>Let's <a href='hub'>return to the topic list.</a></p>"
-        ),
+    "plaza": new undum.SimpleSituation(
+        "<p>Una vez en la plaza te sorprende la gran expectación que hay congregada. Poniendo\
+        un poco de atención te enteras de que va a haber una ejecución en el patíbulo. Este\
+        se encuentra en el centro de la plaza, que es como una gran hondonada de losas de\
+        piedra, en la que el centro conecta con cuatro escaleras al nivel superior, algo\
+        parecido a un teatro romano. La multitud se agolpa en las secciones del nivel\
+        superior, dejando las escaleras libres donde hay varios agentes de la Policía del\
+        Pensamiento en cada una de ellas.</p>\
+		<br>\
+        <p>No pasa mucho tiempo hasta que la muchedumbre empieza a jalear y a propinar\
+        insultos. Y de no sabes donde aparecen, bajando por una de las escaleras, tres\
+        presos escoltados por varios agentes. En las grandes telepantallas que rodean a la\
+        plaza empiezan restransmitir las imágenes de las caras de los condenados y, de\
+        forma casi inaudible por el jaleo, un listado de los cargos por los cuales se les va a\
+		aplicar la pena de muerte. Presupones que dos de ellos son extranjeros por sus\
+		rasgos faciales, seguramente de Eurasia.</p>\
+		<br>\
+		<p>Pero antes de que lleguen al patíbulo decides que ya has tenido suficiente de ese\
+		macabro espectáculo y te marchas a paso vivo. De repente te parece oír una\
+		explosión de alguna calle no muy lejana.</p>\
+		<br>\
+        <p><a href=''>Contiuar</a></p>"
+		,
+        {
+            enter: function(character, system, from) {
+						system.setQuality("crimentalidad", character.qualities.crimentalidad+1);
+					}
+        }
+	),
+	"callejon": new undum.SimpleSituation(
+		"<p>Continuas por una calle donde juegan varios niños uniformados, seguramente estén\
+		de camino a la Liga Juvenil de Espías.</p>\
+		<br>\
+		<p>Pasas por delante de una tienda de comestibles y otros artículos de primera\
+		necesidad y recuerdas que apenas queda comida en casa.</p>\
+		<br>\
+		<p class='transient'><a href='tienda'>Entrar en la tienda</a>.</p>\
+		<br>\
+		<p class='transient'><a href='bomba'>No entrar y seguir tu camino</a>.</p>"		
+	),
+	"tienda": new undum.SimpleSituation(
+		"<p>Entras en la tienda. Al abrir la puerta suena una campanita que\
+		despierta de su letargo a un aburrido dependiente.</p>\
+		<br>\
+		<p>―Hola camarada― Te saluda.</p>\
+		<br>\
+		<p>―Buenas camarada― respondes mientras miras a las estanterías\
+		casi desvalijadas ―¿Le queda algo de comida?</p>\
+		<br>\
+		<p>―Lo dudo, voy a mirar en la parte de atrás.</p>\
+		<br>\
+		<p>―Se lo agradezco</p>\
+		<br>\
+		<p>En cuanto el dependiente desaparece por una puerta, desde la calle,\
+		se oye un gran estruendo que revienta el escaparate y hace que te\
+		caigas al suelo muerto de miedo. Acto seguido se escuchan unos\
+		gritos y sales por la puerta para ver qué ha ocurrido.</p>\
+		<br>\
+		<p>―¡Acaba de caer una olla a presión!― grita un señor.</p>\
+		<br>\
+		<p>Donde antes se encontraban los niños jugando, ahora ves un socavón\
+		ennegrecido, adoquines desperdigados por todos lados y restos de lo\
+		que parecen ser jirones ensangrentados de uniformes.</p>\
+		<br>\
+		<p>La vista se te nubla y recuerdas la guerra con Eurasia, y si una bomba\
+		ha caído en medio de Londres, lo más probable es que el frente esté\
+		más cerca de lo que os intenta hacer creer las propagandas de El Partido.\
+		<br>\
+		<p>Con la mirada absorta y olvidándote de la comida que ibas a comprar vuelves a tu camino al trabajo\
+		<br>\
+		<p class='transient'><a href=''>Contuniar</a>.</p>"		
+	),
+	"bomba": new undum.SimpleSituation(
+		"<p>Te asomas por el escaparate lleno de suciedad y huellas, y ves que la\
+		tienda no ofrece gran cosa, casi todas las estanterías están vacías.</p>\
+		<br>\
+		<p>Sigues tu camino. Cuando pasas al lado de los niños que juegan con\
+		unas cartas hechas por ellos, escuchas un creciente silbido desde el\
+		cielo. Una gran masa de acero aplasta a uno de los de los críos y\
+		antes de que nadie pueda procesarlo y pedri ayuda, todo se vuele negro.</p>\
+		<br>\
+		<p>La felicidad y una sensación de libertad te invaden, llorarías de\
+		alegría si tuvieras cuerpo. Pero ya no perteneces a un mundo triste y\
+		decadente, ya no eres preso de la monótona rutina, ni del miedo\
+		constante al Socing. A partir de ahora eres eternamente libre.</p>\
+		<br>\
+		<h2>Fin del juego</h2>"
+	),
     // Again, we'll retrieve the text we want from the HTML file.
     "saving": new undum.Situation({
         enter: function(character, system, from) {
