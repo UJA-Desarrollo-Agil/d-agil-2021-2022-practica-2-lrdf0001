@@ -302,7 +302,7 @@ undum.game.situations = {
 		macabro espectáculo y te marchas a paso vivo. De repente te parece oír una\
 		explosión de alguna calle no muy lejana.</p>\
 		<br>\
-        <p><a href=''>Contiuar</a></p>"
+        <p><a href='trabajo'>Contiuar</a></p>"
 		,
         {
             enter: function(character, system, from) {
@@ -351,7 +351,7 @@ undum.game.situations = {
 		<br>\
 		<p>Con la mirada absorta y olvidándote de la comida que ibas a comprar vuelves a tu camino al trabajo\
 		<br>\
-		<p class='transient'><a href=''>Contuniar</a>.</p>"		
+		<p class='transient'><a href='trabajo'>Contuniar</a>.</p>"		
 	),
 	"bomba": new undum.SimpleSituation(
 		"<p>Te asomas por el escaparate lleno de suciedad y huellas, y ves que la\
@@ -368,6 +368,101 @@ undum.game.situations = {
 		constante al Socing. A partir de ahora eres eternamente libre.</p>\
 		<br>\
 		<h2>Fin del juego</h2>"
+	),
+	"trabajo": new undum.SimpleSituation(
+		"<p>No piensas en nada, tu cuerpo actúa de manera autónoma. Subes escaleras y atraviesas\
+		pasillos sin mirar ni saludar a nadie. Cuando te das cuenta estás en tu cubil de trabajo,\
+		sentado, esperando recibir la nueva tarea cada vez más nervioso.</p>\
+		<br>\
+		<p>Hasta que al fin a través de un conducto cilíndrico, del que desconoces su origen, aparece\
+		un rulo de papeles, todos blancos y uno amarillo. El amarillo son las intrucciones, en ellas\
+		se explica que tienes que reescribir todos los informes adjuntos, en ellos aparece un\
+		nombre de una mujer que, por las razones desconocidas, El Partido quiere hacer que\
+		desaparezcan todas sus huellas, como si no hubiera existido.</p>\
+		<br>\
+		<p>El trabajo no te parece difícil, al contrario, lo encuentras monótono y entretenido. Hace que\
+		lo que has presenciado en los últimos minutos te parezca un sueño lejano.</p>\
+		<br>\
+		<p>Al terminar mandas los informes antiguos por el agujero de memoria, de donde no\
+		volverán a salir y nadie los volverá a ver. Y los nuevos los envías a través de otro conducto\
+		cilíndrico, del que desconoces su destino.</p>\
+		<br>\
+		<p>El dolor de espalda de esta mañana vuelve a atacar, te levantas y sales del cubículo para\
+		estirarte. En esto que ves a una mujer joven (u hombre), morena y muy atractiva caminando\
+		hacia tu dirección a través del pasillo. Esta no es la primera vez que la ves, la recuerdas\
+		porque suele llevar una banda de la Brigada Anti-Sex y porque siempre se sienta detrás\
+		tuya durante el Minuto de Odio. En estas reuniones los trabajadores se sientan delante de\
+		una gran telepantalla y escuchan las noticias y propagandas del Socing, demostrando su\
+		amor por el Partido a través de vítores, y su odio a sus enemigos chillando e insultándolos.\
+		Ella era de las que más se dejaba llevar por esa mezcla de amor y odio, poniéndote\
+		especialmente nervioso. Sospechas que algún día te denunciará o que ella misma te\
+		detenga por ser agente secreta de la Policía del Pensamiento, pero aún así mantienes el\
+		contacto visual hasta que desaparece al girar por el pasillo.</p>\
+		<br>\
+		<p>Finalizas tu jornada laboral, es hora de volver a casa. Decides volver por un camino distinto\
+		por el que has vuelto. Una zona antigua de calles estrechas poco concurridas y carentes de\
+		telepantallas. Mientras piensas que aún tienes que comprar algo de comida para mañana, a\
+		tus espaldas escuchas unos inquietantes pasos que se acercan cada vez más.</p>\
+		<br>\
+		<p class='transient'><a href='ocultarse'>Ocultarte en un callejón</a>.</p>\
+		<br>\
+		<p class='transient'><a href='correr'>Acelerar el paso y huir</a>.</p>\
+		"
+	),
+	"ocultarse": new undum.SimpleSituation(
+		"<p>Girando a tu izquierda te metes en un callejón deshabitado para esperar al individuo\
+		de frente. Oyes como sus pasos se aceleran, y de improvisto, una pequeña figura\
+		llena de rulos oscuros se choca contigo.</p>\
+		<br>\
+		<p>―¡Ay!― exclama una voz de mujer ―¿Pero qué haces? ¡No te detengas justo a la vuelta de la esquina!</p>\
+		<br>\
+		<p>Para tu asombro reconoces esa voz, es la chica morena del trabajo.</p>\
+		<br>\
+		<p>―Llevo tiempo tiempo queriendo contactar contigo sin saber cómo.</p>\
+		<br>\
+		<p>No parece la mujer fría y despiadada que ves todos los días en el trabajo. No lleva la\
+		banda de la Brigada Anti-Sex y el mono lo tiene un poco desabrochado dejando\
+		entrever cierto encanto y atractivo. Su actitud sincera y amena hace que olvides el\
+		odio que profesas por ella, dándole una oportunidad.</p>\
+		<br>\
+		<p>―Está bien, ¿qué quieres?― respondes.</p>\
+		<br>\
+		<p>―Sé de un sitio seguro donde podemos hablar― dice con voz baja ― Sígueme.</p>\
+		<br>\
+		<p class='transient'><a href='seguirla'>Seguirla</a>.</p>\
+		<br>\
+		<p class='transient'><a href='correr'>Ignorarla e irte a casa</a>.</p>\
+		"
+	),
+	"seguirla": new undum.SimpleSituation(
+		"<p>Por un lado sabes que puede ser una trampa que puede hacer que te cojan\
+		preso. Pero por otro lado, sientes que el hecho de seguirla es una acción que\
+		transgrede los principios y normas El Partido. Optas por esta última.</p>\
+		<br>\
+		<p>Te conduce por un par de callejones en absoluto silencio, atravesandolos\
+		rápidamente y parándose en seco en cada intersección de caminos, mirando\
+		a ambos lados comprobando que no haya nadie y ninguna telepantalla a la vista.</p>\
+		<br>\
+		<p>Finalmente os deteneis en un pequeño portal que abre con una llave que se saca del escote. Y rápidamente entrais.</p>\
+		<br>\
+		<p>―Aquí es donde vivía mi abuela― dice mientras cierra con cuidado la puerta detrás\
+		tuya― Perdona que no haya hablado hasta ahora, podía haber algún micrófono oculto.\
+		Siempre cabe la posibilidad de que uno de esos cerdos reconozca tu voz.</p>\
+		<br>\
+		<p>Ante ti se alarga un pasillo estrecho poco iluminado con puertas cerradas, la única\
+		puerta abierta es la del fondo. La chica te invita a pasar y ves un cómodo salón: un\
+		par de ventanas, un grán sofá acompañado de dos butacas y una pequeña chimenea. Sobre\
+		esta hay un cuadro, en él se representa a un hombre en lo alto de risco contemplando un mar de nubes.<p>\
+		<br>\
+		<p>―¿Te gusta?― te dice la chica señalando el cuadro ―No me acuerdo ni del nombre del\
+		autor ni del cuadro, tampoco está firmado porque lo más seguro es que sea una imitación.</p>\
+		<br>\
+		<p>No le contestas, sigues escéptico mirando alrededor, extrañado por la ausencia de\
+		telepantalla. Mientras la chica se sienta en el sofá.</p>\
+		<br>\
+		<p>―Bueno, ¿te vas a sentar o qué?― dice mientras te señala el sitio al lado de ella\
+		―Estate tranquilo, aquí estamos seguros.</p>\
+		"
 	),
     // Again, we'll retrieve the text we want from the HTML file.
     "saving": new undum.Situation({
