@@ -247,9 +247,9 @@
 			no os veis, ni siquiera sabes si sigue con vida. Recuerdas que os casasteis por
 			conveniencia y deber por y para el partido. No están permitidos los matrimonios por
 			amor y mucho menos mantener relaciones sexuales por placer. Solo está permitido
-			para generar descendencia, con el objetivo de que El Partido pueda moldear a las
+			para generar descendencia, con el objetivo de que <b>El Partido</b> pueda moldear a las
 			nuevas generaciones con sus ideales desde que nacen. Convertirlos en espías para
-			que delaten a sus padres si sospechan que estos no son fieles al Socing.</p>
+			que delaten a sus padres si sospechan que estos no son fieles al <b>Socing</b>.</p>
 			<br>
 			<p>Y ese fue el motivo de vuestra separación: muchos fríos y patéticos intentos sin
 			resultados por una causa que no compartíais.</p>
@@ -272,25 +272,23 @@
 			<h2>La Ignorancia es Fuerza</h2>
 			<br>
 			<p>Ante esta visión no eres capaz de controlarte y poner una expresión de 
-			preocupación y miedo. Te vuelves rápidamente y sigues tu camino.</p>
+			preocupación y miedo. Te vuelves rápidamente y <a href='vifurcacion'>sigues tu camino.</a></p>
 		</div>
 		
-		<div id="detenido"  class="situation" data-tags="topic"
-		data-choices="#example">
+		<div id="detenido"  class="situation">
 			<p>Al encender las luces piso ves que te esperan tres hombres uniformados de negro 
-			y con placas, son de la Policía del Pensamiento. Dos de ellos están de pie, llevan 
+			y con placas, son de <b>la Policía del Pensamiento</b>. Dos de ellos están de pie, llevan 
 			casco y no le ves las caras, rápidamente te inmovilizan. El tercero, un hombre joven, 
 			rubio y apuesto está sentado en el escritorio del salón.</p>
 			<br>
 			<p>―Señor [Insertar nombre]― dice con una voz grave y serena― Queda detenido por 
-			incumplimiento de los principios de Socing y por cometer varios crimentales. Lo 
-			llevaremos al Minimor (Ministerio del Amor) para que responda por ello.</p>
+			incumplimiento de los principios de <b>Socing</b> y por cometer varios <b>crimentales</b>. Lo 
+			llevaremos al <b>Minimor</b> (Ministerio del Amor) para que responda por ello.</p>
 			<br>
 			<h2>Fin del juego</h2>
 		</div>
 		
-		<div id="no-detenido"  class="situation" data-tags="topic"
-		data-choices="#example">
+		<div id="no-detenido"  class="situation">
 			<p>Abres la puerta y entras en tu piso. Te sirves un vaso de ginebra. Es el final de otro día y mañana será igual.</p>
 			<br>
 			<h2>Fin del juego</h2>
