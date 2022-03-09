@@ -30,7 +30,7 @@ undum.game.slideUpSpeed = 500
 undum.game.situations = {
     start: new undum.SimpleSituation(
         "<h1>Starting Out with Undum</h1>\
-        <img src= class='float_right'>\
+        <img src='' class='float_right'>\
         <p>Sientes un escalofrío que perturba tu sueño.</p>\
 		<p>Estás postrado en una incómoda cama,\
         si a eso se le puede llamar cama, y sientes una leve corriente de aire frío\
@@ -106,7 +106,7 @@ undum.game.situations = {
     ventana: new undum.SimpleSituation(
         "<p>Te decides a cerrar la ventana.</p>\
 		<br>\
-		Al incorporarte sientes molestias\
+		<p>Al incorporarte sientes molestias\
         en la espalda y el cuello a causa de la mala calidad del camastro.\
         Con esfuerzo y tras unos estiramientos consigues levantarte y dirigirte hacia la ventana.\
         Cuando alcanzas la manivela cambias de opinión y decides abrirla, notas como la refrescante brisa renueva\
@@ -136,12 +136,7 @@ undum.game.situations = {
 		<p>Respiras hondo para tranquilizarte y borras de tú rostro la expresión de sorpresa y\
 		asco, y la sustituyes por otra de completa neutralidad.</p>\
 		<br>\
-        <p class='transient'><a href='desayuno'>Continuar</a></p>",
-        {
-            heading: "Levantarte a cerrar la ventana.",
-            diplayOrder: 2,
-            tags: ["topic"]
-        }
+        <p class='transient'><a href='desayuno'>Continuar</a></p>"
     ),
     cama: new undum.SimpleSituation(
         "<p>Decides quedarte en la cama y te quedas completamente dormido.</p>\
@@ -168,9 +163,6 @@ undum.game.situations = {
 		<br>\
         <p class='transient'><a href='desayuno'>Continuar</a></p>",
         {
-            tags: ["topic"],
-            displayOrder: 3,
-            heading: "Quedarte en la cama",
 			enter: function(character, system, from) {
 						system.setQuality("crimentalidad", character.qualities.crimentalidad+1);
 					}
@@ -445,9 +437,9 @@ undum.game.situations = {
 		<br>\
 		<p>Finalmente os deteneis en un pequeño portal que abre con una llave que se saca del escote. Y rápidamente entrais.</p>\
 		<br>\
-		―Aquí es donde vivía mi abuela― dice mientras cierra con cuidado la puerta detrás\
+		<p>―Aquí es donde vivía mi abuela― dice mientras cierra con cuidado la puerta detrás\
 		tuya― Perdona que no haya hablado hasta ahora, podía haber algún micrófono oculto.\
-		Siempre cabe la posibilidad de que uno de esos cerdos reconozca tu voz.\
+		Siempre cabe la posibilidad de que uno de esos cerdos reconozca tu voz.</p>\
 		<br>\
 		<p>Ante ti se alarga un pasillo estrecho poco iluminado con puertas cerradas, la única\
 		puerta abierta es la del fondo. La chica te invita a pasar y ves un cómodo salón: un\
@@ -462,107 +454,78 @@ undum.game.situations = {
 		<br>\
 		<p>―Bueno, ¿te vas a sentar o qué?― dice mientras te señala el sitio al lado de ella\
 		―Estate tranquilo, aquí estamos seguros.</p>\
+		<br>\
+		<p class='transient'><a href='sentarse'>Sentarse con ella</a>.</p>\
+		<br>\
+		<p class='transient'><a href='correr'>Salir pitando de allí</a>.</p>\
 		"
 	),
+	"sentarse": new undum.SimpleSituation(
+		"<p>―¿Me invitas a tu casa y ni siquiera nos hemos presentado?― exclamas extrañado\
+		mientras te sientas a su lado― No sé cómo te llamas.</p>\
+		<br>\
+		<p>―No es necesario para lo que vamos a hacer. Solo necesito saber una cosa:\
+		¿odias al Partido tanto como yo?</p>\
+		<br>\
+		<p>―Lo detesto. ¿Pero qué dices qué vamos a hacer?</p>\
+		<br>\
+		<p>―¿Tú qué crees?</p>\
+		<br>\
+		<p>Se te acelera el corazón. Lo habías hecho decenas de veces, pero no las suficientes.\
+		Cualquier cosa que oliera a corrupción te llenaba de una absurda esperanza, tal vez \
+		El Partido estuviera corrompido bajo su fachada de culto al esfuerzo y negación de placeres.</p>\
+		<br>\
+		<p>Al finalizar tiras de ella y os quedáis cara a cara. Te fijas en su rostro pecoso y sus ojos castaños.</p>\
+		<br>\
+		<p>―¿Cómo te llamas?― preguntas.</p>\
+		<br>\
+		<p>―Eva (o Adán), y el tuyo es [Insertar nombre], tengo mis métodos― dice antes de que puedas\
+		preguntar cómo lo sabe― Te llevo observando desde hace tiempo, mi intuición me decía que \
+		estabas completamente en contra del partido. Y no me equivocaba.</p>\
+		<br>\
+		<p>―Lo odio con todo mi ser. Al igual que te odiaba a ti, pensaba que eras de la Policía.</p>\
+		<br>\
+		<p>―¿Pero qué dices?― rompe a reir― La banda de la Brigada, los desfiles y la emoción en el Minuto\
+		de Odio son solo una tapadera para hacer lo que me gusta.</p>\
+		<br>\
+		<p>―Pues a nosotros no nos has engañado― exclama una voz metálica desde detrás del cuadro </p>\
+		<br>\
+		<p>Os levantáis de un salto y lo descolgais. Un escalofrío te recorre entero y empalideces\
+		al verla: una telepantalla con la cara del Gran Hermano.</p>\
+		<br>\
+		<p>―No es posible― susurra Eva con la voz quebrada y los ojos acuosos.</p>\
+		<br>\
+		<p>―Estáis detenidos― dice el Gran Hermano de forma inexpresiva.</p>\
+		<br>\
+		<p>Tras la sentencia, cinco agentes de la Policía del Pensamiento irrumpen en la habitación.\
+		Te dejas prender sin oponer resistencia. Al contrario que Eva, a la que propinan un fuerte\
+		puñetazo directo al estómago para neutralizarla, provocandole una angustia que manifiesta\
+		con un grito sordo y escupiendo en el suelo.</p>\
+		<br>\
+		<h2>Fin del juego</h2>"
+	),
+	"correr": new undum.SimpleSituation(
+		"<p>Todo aquello te parece muy sospechoso. Decides salir de allí sin mediar\
+		palabra y te <a href='llegar-casa'>diriges a casa</a> a paso vivo.</p>\
+		<br>"
+	),
+	"llegar-casa": new undum.SimpleSituation(
+		"<p>No te detienes hasta alcanzar el portal de tu edificio. Abres la puerta, subes las\
+		desoladas escaleras. El poster del Gran Hermano te parece más serio que antes. Llegas a\
+		la planta de tu piso. El mal olor sigue igual de pertinente.</p>\
+		<br>",
+		{
+            enter: function(character, system, from) {
+					if(character.qualities.crimentalidad > 3){
+						system.doLink("detenido");
+					}else{
+						system.doLink("no-detenido");
+					}
+			}
+        }
+	)
     // Again, we'll retrieve the text we want from the HTML file.
-    "saving": new undum.Situation({
-        enter: function(character, system, from) {
-            system.write($("#s_saving").html());
-        },
-        tags: ["topic"],
-        displayOrder: 6,
-        optionText: "Saving and Loading"
-    }),
-
-    "implicit-boost": new undum.SimpleSituation(
-        "<p>Your luck has been boosted<span class='transient'>, check the\
-        list of options to see if they have changed</span>.</p>",
-        {
-            tags: ["example"],
-            enter: function(character, system, from) {
-                system.animateQuality("luck", character.qualities.luck+1)
-                system.doLink('example-choices');
-            },
-            optionText: "Boost Your Luck",
-            displayOrder: 1,
-            canView: function(character, system, host) {
-                return character.qualities.luck < 4;
-            }
-        }
-    ),
-    "implicit-drop": new undum.SimpleSituation(
-        "<p>Your luck has been reduced<span class='transient'>, check the\
-        list of options to see if they have changed</span>.</p>",
-        {
-            tags: ["example"],
-            enter: function(character, system, from) {
-                system.animateQuality("luck", character.qualities.luck-1)
-                system.doLink('example-choices');
-            },
-            optionText: "Reduce Your Luck",
-            displayOrder: 2,
-            canView: function(character, system, host) {
-                return character.qualities.luck > -4;
-            }
-        }
-    ),
-    "high-luck-only": new undum.SimpleSituation(
-        "<p>Your luck is higher than 'fair'. The link to this \
-        situation would not\
-        have appeared if it were lower.</p>",
-        {
-            tags: ["example"],
-            enter: function(character, system, from) {
-                system.doLink('example-choices');
-            },
-            optionText: "High Luck Option",
-            displayOrder: 3,
-            canView: function(character, system, host) {
-                return character.qualities.luck > 0;
-            }
-        }
-    ),
-    "low-luck-only": new undum.SimpleSituation(
-        "<p>Your luck is lower than 'fair'. The link to this situation \
-        appears whether\
-        it is low or high, but can only be chosen if it is low. It does this\
-        by defining a <em>canChoose</em> method.</p>",
-        {
-            tags: ["example"],
-            enter: function(character, system, from) {
-                system.doLink('example-choices');
-            },
-            optionText: "Low Luck Option (requires low luck to be clickable)",
-            displayOrder: 3,
-            canChoose: function(character, system, host) {
-                return character.qualities.luck < 0;
-            }
-        }
-    ),
-
-    "last": new undum.SimpleSituation(
-        "<h1>Where to Go Now</h1>\
-        <p>So that's it. We've covered all of Undum. This situation is the\
-        end, because it has no further links. The 'The End' message is\
-        just in the HTML output of this situation, it isn't anything special\
-        to Undum</p>\
-        \
-        <p>I've added an\
-        inspiration quality to your character list. Its time for you to\
-        crack open the game file and write your own story.</p>\
-        <h1>The End</h1>",
-        {
-            tags: ["topic"],
-            optionText: "Finish the Tutorial",
-            displayOrder: 8,
-            enter: function(character, system, from) {
-                system.setQuality("inspiration", 1);
-                system.setCharacterText(
-                    "<p>You feel all inspired, why not have a go?</p>"
-                );
-            }
-        }
-    )
+    
 };
 
 // ---------------------------------------------------------------------------
@@ -576,7 +539,8 @@ undum.game.start = "start";
 undum.game.qualities = {
     
 	crimentalidad: new undum.IntegerQuality( 
-		"Crimentalidad", {priority:"0001", group:'stats'}),
+		"Crimentalidad", {priority:"0001", group:'stats'})
+	/*,
 	skill: new undum.IntegerQuality(
         "Skill", {priority:"0001", group:'stats'}
     ),
@@ -613,10 +577,10 @@ undum.game.qualityGroups = {
  * to configure the character at the start of play. */
 undum.game.init = function(character, system) {
 	character.qualities.crimentalidad = 0;
-	
+	/*
     character.qualities.skill = 12;
     character.qualities.stamina = 12;
-	/*
+	
     character.qualities.luck = 0;
     character.qualities.novice = 1;
     character.qualities.inspiration = 0;
