@@ -26,6 +26,14 @@ undum.game.fadeSpeed = 1500
  * option. */
 undum.game.slideUpSpeed = 500
 
+var nombre="Link";
+var aux;
+aux=prompt("Introduzca su nombre:");
+
+if(aux!=null && aux!=""){
+	nombre=aux;
+} 
+
 /* The situations that the game can be in. Each has a unique ID. */
 undum.game.situations = {
     start: new undum.SimpleSituation(
@@ -43,7 +51,12 @@ undum.game.situations = {
 		<p class='transient'><a href='ventana'>Cerrar ventana</a></p>\
 		<br>\
 		<p class='transient'><a href='cama'>Seguir durmiendo</a></p>\
-		"
+		"/*,
+        {
+			enter: function(character, system, from) {
+						system.write("formulario").html();
+					}			
+        }*/
     ),
 
     // NB: The 'hub' situation which is the main list of topics, is
@@ -417,7 +430,7 @@ undum.game.situations = {
 		<br>\
 		<p>―¿Cómo te llamas?― preguntas.</p>\
 		<br>\
-		<p>―Eva, y el tuyo es [Insertar nombre], tengo mis métodos― dice antes de que puedas\
+		<p>―Eva, y el tuyo es "  + nombre + ", tengo mis métodos― dice antes de que puedas\
 		preguntar cómo lo sabe― Te llevo observando desde hace tiempo, mi intuición me decía que \
 		estabas completamente en contra de <b>El Partido</b>. Y no me equivocaba.</p>\
 		<br>\
@@ -477,7 +490,10 @@ undum.game.start = "start";
 undum.game.qualities = {
     
 	crimentalidad: new undum.IntegerQuality( 
-		"Crimentalidad", {priority:"0001", group:'stats'})
+		"Crimentalidad", {priority:"0002", group:'stats'})
+	,
+	name: new undum.OnOffQuality( 
+		"Nombre: "+ nombre, {priority:"0001", group:'stats'})
 	/*,
 	skill: new undum.IntegerQuality(
         "Skill", {priority:"0001", group:'stats'}
@@ -515,6 +531,7 @@ undum.game.qualityGroups = {
  * to configure the character at the start of play. */
 undum.game.init = function(character, system) {
 	character.qualities.crimentalidad = 0;
+	system.setQuality("name", true);
 	/*
     character.qualities.skill = 12;
     character.qualities.stamina = 12;
