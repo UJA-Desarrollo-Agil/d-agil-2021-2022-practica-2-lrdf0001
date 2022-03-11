@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
+	<style>@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');</style>
+  
     <meta charset="utf-8">
     <!-- Game Title: edit this -->
     <title>1984</title>
@@ -285,7 +287,7 @@
 		<div id="detenido"  class="situation">
 			<p>Al encender las luces piso ves que te esperan tres hombres uniformados de negro 
 			y con placas, son de <b>la Policía del Pensamiento</b>. Dos de ellos están de pie, llevan 
-			casco y no le ves las caras, rápidamente te inmovilizan. El tercero, un hombre joven, 
+			casco y no le ves las caras: Rápidamente te inmovilizan. El tercero, un hombre joven, 
 			rubio y apuesto está sentado en el escritorio del salón.</p>
 			<br>
 			<p>―Señor [Insertar nombre]― dice con una voz grave y serena― Queda detenido por 

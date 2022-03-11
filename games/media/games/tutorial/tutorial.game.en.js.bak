@@ -30,7 +30,7 @@ var nombre="Link";
 var aux;
 aux=prompt("Introduzca su nombre:");
 
-if(aux!=null || aux!=""){
+if(aux!=null && aux!=""){
 	nombre=aux;
 } 
 
@@ -325,7 +325,7 @@ undum.game.situations = {
 		<p>El trabajo no te parece difícil, al contrario, lo encuentras monótono y entretenido. Hace que\
 		lo que has presenciado en los últimos minutos te parezca un sueño lejano.</p>\
 		<br>\
-		<p>Al terminar mandas los informes antiguos por el agujero de memoria, de donde no\
+		<p>Al terminar mandas los informes antiguos por el <b>agujero de memoria</b>, de donde no\
 		volverán a salir y nadie los volverá a ver. Y los nuevos los envías a través de otro conducto\
 		cilíndrico, del que desconoces su destino.</p>\
 		<br>\
@@ -361,11 +361,12 @@ undum.game.situations = {
 		<br>\
 		<p>Para tu asombro reconoces esa voz, es la chica morena del trabajo.</p>\
 		<br>\
-		<p>―Llevo tiempo tiempo queriendo contactar contigo sin saber cómo.</p>\
-		<br>\
 		<p>No parece la mujer fría y despiadada que ves todos los días en el trabajo. No lleva la\
 		banda de la <b>Brigada Anti-Sex</b> y el mono lo tiene un poco desabrochado dejando\
-		entrever cierto encanto y atractivo. Su actitud sincera y amena hace que olvides el\
+		entrever cierto encanto y atractivo.</p>\
+		<br>\
+		<p>―Llevo tiempo tiempo queriendo contactar contigo sin saber cómo.―\
+		Su actitud sincera y amena hace que olvides el\
 		odio que profesas por ella, dándole una oportunidad.</p>\
 		<br>\
 		<p>―Está bien, ¿qué quieres?― respondes.</p>\
@@ -430,7 +431,7 @@ undum.game.situations = {
 		<br>\
 		<p>―¿Cómo te llamas?― preguntas.</p>\
 		<br>\
-		<p>―Eva, y el tuyo es "  + nombre + ", tengo mis métodos― dice antes de que puedas\
+		<p>―Eva, y tú eres "  + nombre + ". Tengo mis métodos― dice antes de que puedas\
 		preguntar cómo lo sabe― Te llevo observando desde hace tiempo, mi intuición me decía que \
 		estabas completamente en contra de <b>El Partido</b>. Y no me equivocaba.</p>\
 		<br>\
@@ -468,7 +469,17 @@ undum.game.situations = {
 		{
             enter: function(character, system, from) {
 					if(character.qualities.crimentalidad > 3){
-						system.doLink("detenido");
+						//system.doLink("detenido");
+						system.write("<p>Al encender las luces piso ves que te esperan tres hombres uniformados de negro\
+										y con placas, son de <b>la Policía del Pensamiento</b>. Dos de ellos están de pie, llevan \
+										casco y no le ves las caras: Rápidamente te inmovilizan. El tercero, un hombre joven,\
+										rubio y apuesto está sentado en el escritorio del salón.</p>\
+										<br>\
+										<p>―Señor" + system.character.name + "― dice con una voz grave y serena― Queda detenido por \
+										incumplimiento de los principios de <b>Socing</b> y por cometer varios <b>crimentales</b>. Lo\
+										llevaremos al <b>Minimor</b> (Ministerio del Amor) para que responda por ello.</p>\
+										<br>\
+										<h2>Fin del juego</h2>");
 					}else{
 						system.doLink("no-detenido");
 					}
@@ -540,5 +551,5 @@ undum.game.init = function(character, system) {
     character.qualities.novice = 1;
     character.qualities.inspiration = 0;
 	*/
-    system.setCharacterText("<p>You are starting on an exciting journey.</p>");
+    //system.setCharacterText("<p>You are starting on an exciting journey.</p>");
 };
