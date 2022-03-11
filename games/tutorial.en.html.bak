@@ -237,13 +237,20 @@
           this example:</p>
       </div> 
 	  
+		<div >
+			<ul id="formulario"  class="options">
+				<li>Hombre</li>
+				<li>Mujer</li>
+			</ul>
+		</div>	
+	  
 	  <div id="cuaderno" class="situation" data-tags="topic"
            data-choices="#example">
 			<p>Coges el cuaderno, está muy manoseado: la cubierta casi ha perdido el letrero y las
 			esquinas están rotas. El lápiz tampoco se queda atrás: está casi por la mitad y ha
 			perdido la goma de borrar.</p>
 			<br>
-			<p>Al abrir el cuaderno redescubres una foto de tu esposa (o esposo). Hace un año que
+			<p>Al abrir el cuaderno redescubres una foto de tu esposa. Hace un año que
 			no os veis, ni siquiera sabes si sigue con vida. Recuerdas que os casasteis por
 			conveniencia y deber por y para el partido. No están permitidos los matrimonios por
 			amor y mucho menos mantener relaciones sexuales por placer. Solo está permitido
@@ -294,9 +301,6 @@
 			<h2>Fin del juego</h2>
 		</div>
     </div>
-	
-	
-	
 	
 		
     <!-- Load the libraries we depend on -->
