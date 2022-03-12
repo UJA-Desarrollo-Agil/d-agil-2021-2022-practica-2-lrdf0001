@@ -28,7 +28,7 @@ undum.game.slideUpSpeed = 500
 
 var nombre="Link";
 var aux;
-aux=prompt("Introduzca su nombre:");
+aux=prompt("Introduzca un nombre masculino para el personaje:");
 
 if(aux!=null && aux!=""){
 	nombre=aux;
@@ -253,7 +253,10 @@ undum.game.situations = {
 	),
 	"callejon": new undum.SimpleSituation(
 		"<br><p>Continuas por una calle donde juegan varios niños uniformados, seguramente estén\
-		de camino a la <b>Liga Juvenil de Espías</b>.</p>\
+		de camino a la <b>Liga Juvenil de Espías</b>. En estas academias ''voluntarias'', desde muy pequeños, los niños\
+		son entrenados sistemáticamente para que enfrenten a sus padres, aprendan a espiarles\
+		y a denunciar sus ''desviaciones''. De esta manera el <b>Socing</b> amplia su red de control absoluto\
+		y se asegura de afianzarlo para el futuro.</p>\
 		<br>\
 		<p>Pasas por delante de una tienda de comestibles y otros artículos de primera\
 		necesidad y recuerdas que apenas queda comida en casa.</p>\
@@ -286,11 +289,11 @@ undum.game.situations = {
 		ennegrecido, adoquines desperdigados por todos lados y restos de lo\
 		que parecen ser jirones ensangrentados de uniformes.</p>\
 		<br>\
-		<p>La vista se te nubla y recuerdas la guerra con <b>Eurasia</b>, y si una bomba\
+		<p>La vista se te nubla y recuerdas la guerra con <b>Eurasia</b>. Y si una bomba\
 		ha caído en medio de Londres, lo más probable es que el frente esté\
 		más cerca de lo que os intenta hacer creer las propagandas de <b>El Partido</b>.</p>\
 		<br>\
-		<p>Con la mirada absorta y olvidándote de la comida que ibas a comprar vuelves a tu camino al trabajo\
+		<p>Con la mirada absorta y olvidándote de la comida que ibas a comprar vuelves a tu camino al trabajo.</p>\
 		<br>\
 		<p class='transient'><a href='trabajo'>Contuniar</a>.</p>"		
 	),
@@ -301,7 +304,7 @@ undum.game.situations = {
 		<p>Sigues tu camino. Cuando pasas al lado de los niños que juegan con\
 		unas cartas hechas por ellos, escuchas un creciente silbido desde el\
 		cielo. Una gran masa de acero aplasta a uno de los de los críos y\
-		antes de que nadie pueda procesarlo y pedri ayuda, todo se vuele negro.</p>\
+		antes de que nadie pueda procesarlo y pedir ayuda, todo se vuele negro.</p>\
 		<br>\
 		<p>La felicidad y una sensación de libertad te invaden, llorarías de\
 		alegría si tuvieras cuerpo. Pero ya no perteneces a un mundo triste y\
@@ -359,9 +362,8 @@ undum.game.situations = {
 		<br>\
 		<p>―¡Ay!― exclama una voz de mujer ―¿Pero qué haces? ¡No te detengas justo a la vuelta de la esquina!</p>\
 		<br>\
-		<p>Para tu asombro reconoces esa voz, es la chica morena del trabajo.</p>\
-		<br>\
-		<p>No parece la mujer fría y despiadada que ves todos los días en el trabajo. No lleva la\
+		<p>Para tu asombro reconoces esa voz, es la chica morena del trabajo. No parece la mujer fría y despiadada\
+		que ves todos los días. No lleva la\
 		banda de la <b>Brigada Anti-Sex</b> y el mono lo tiene un poco desabrochado dejando\
 		entrever cierto encanto y atractivo.</p>\
 		<br>\
@@ -450,8 +452,8 @@ undum.game.situations = {
 		<p>―Estáis detenidos― dice el <b>Gran Hermano</b> de forma inexpresiva.</p>\
 		<br>\
 		<p>Tras la sentencia, cinco agentes de la <b>Policía del Pensamiento</b> irrumpen en la habitación.\
-		Te dejas prender sin oponer resistencia. Al contrario que Eva, a la que propinan un fuerte\
-		puñetazo directo al estómago para neutralizarla, provocandole una angustia que manifiesta\
+		Te dejas prender sin oponer resistencia, sabes que es inútil. Al contrario que Eva, a la que propinan un fuerte\
+		puñetazo directo al estómago para neutralizarla, provocandole una sensación de angustia y dolor que manifiesta\
 		con un grito sordo y escupiendo en el suelo.</p>\
 		<br>\
 		<h2>Fin del juego</h2>"
