@@ -1,5 +1,15 @@
-# 1984
-## Descripción
+# Desarrollo Ágil - Práctica 2: Proyecto Individual
+ - Alumno: Luis René Domínguez Fuentes - 77689949C
+ - Curso: 3º Ingeniería Informática - Ingeniería del Software
+ - Marzo de 2022
+ 
+## Indice
+1. [Descripción](https://github.com/UJA-Desarrollo-Agil/d-agil-2021-2022-practica-2-lrdf0001/edit/master/README.md#1-descripci%C3%B3n)
+2. [Tablero](https://github.com/UJA-Desarrollo-Agil/d-agil-2021-2022-practica-2-lrdf0001/edit/master/README.md#2-tablero-de-trello)
+3. [Telegram](https://github.com/UJA-Desarrollo-Agil/d-agil-2021-2022-practica-2-lrdf0001/edit/master/README.md#3-telegram)
+4. [Flujo de Trabajo](https://github.com/UJA-Desarrollo-Agil/d-agil-2021-2022-practica-2-lrdf0001/edit/master/README.md#4-flujo-de-trabajo-con-git)
+
+## 1 Descripción
 Esta aventura conversacional, desarrollada con Undum, está basada en la novela del escritor George Orwell con el mismo nombre.
 
 En ella se narra una historia distópica en la que el mundo está fraccionado en tres grandes países en guerra: Oceanía, Eurasia y Asia Oriental. Estas naciones no creen en la victoria, siempre se están formando alianzas para combatir entre sí. Aprovechando la  guerra constante para generar una crisis económica para mantener y controlar a la población ignorante y ocupada con el trabajo .
@@ -10,9 +20,9 @@ Obviamente es imposible que alguien pueda alcanzar tal grado de omnipresencia. P
 
 El objetivo del juego es sobrevivir un día en este mundo, como lo haría el protagonista de la novela. Intentando ser los más "normal" posible e intentar actuar de acuerdo con los ideales del Gran Hermano.
 
-## Tablero de Trello
+## 2 Tablero de Trello
 En el siguiente enlace se muestra el [tablero](https://trello.com/b/gmS7QoaJ/practica2) de trello.
-### Tareas
+### 2.1 Tareas
  1. Recopilar información sobre la ambientación. Repasar la novela y tomar nota de elementos y escenarios. 
  2. Leer los artículos recomendados sobre AG. Para adquirir ciertas nociones de cómo relacionar situaciones y acciones.
  3. Revisar algunos ejemplos de otros años. Para tener referencias de cómo deben ser las historias.
@@ -20,7 +30,7 @@ En el siguiente enlace se muestra el [tablero](https://trello.com/b/gmS7QoaJ/pra
  5. Aprender uso de Undum. Practicar y hacer pruebas.
  6. Hacer aventura conversacional.
  7. Documentación.
-### Progreso
+### 2.2 Progreso
 Estado del tablero a lo largo de las cuatro semanas de trabajo.
  - Tablero día 16/02/2022
    ![trello_16-02_ok](https://user-images.githubusercontent.com/99320995/158016230-06cfae2b-13c5-4610-bb67-47029b2d9f59.jpg)
@@ -37,7 +47,7 @@ Estado del tablero a lo largo de las cuatro semanas de trabajo.
  - Tablero día 12/03/2022
    ![trello_12-03_ok](https://user-images.githubusercontent.com/99320995/158016285-a9d263c4-9dcd-4a12-9c2e-afe75896b464.jpg)
 
-## Telegram
+## 3 Telegram
 Notificaciones de Telegram con información relativa a la actividad en GitHub.
 
 ![telegram1](https://user-images.githubusercontent.com/99320995/158016489-78da734c-8491-4023-8143-6d096f99ad61.jpg)
@@ -46,8 +56,11 @@ Notificaciones de Telegram con información relativa a la actividad en GitHub.
 
 ![telegram3](https://user-images.githubusercontent.com/99320995/158016500-3eb32400-d7aa-45c2-9b8b-fa5d8115d2f1.jpg)
 
-## Flujo de trabajo con git
+## 4 Flujo de trabajo con git
 Diagrama que muestra las diferentes ramas con sus respectivos commits y las fechas de cuando se hicieron.
-
+- Desarrollo: azul
+- Release: verde
+- Master: negro
+ 
 ![flujo](https://user-images.githubusercontent.com/99320995/158016593-98c36e44-3a10-452e-8c97-dbc30e791f9d.jpg)
 Captura del día 12/03/2022
