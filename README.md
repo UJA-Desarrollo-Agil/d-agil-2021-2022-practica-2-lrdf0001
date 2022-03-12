@@ -10,7 +10,7 @@
 4. [Flujo de Trabajo](https://github.com/UJA-Desarrollo-Agil/d-agil-2021-2022-practica-2-lrdf0001/edit/master/README.md#4-flujo-de-trabajo-con-git)
 
 ## 1 Descripción
-Esta aventura conversacional, desarrollada con Undum, está basada en la novela del escritor George Orwell con el mismo nombre.
+Esta aventura conversacional, desarrollada con Undum, está basada en la novela 1984 del escritor George Orwell.
 
 En ella se narra una historia distópica en la que el mundo está fraccionado en tres grandes países en guerra: Oceanía, Eurasia y Asia Oriental. Estas naciones no creen en la victoria, siempre se están formando alianzas para combatir entre sí. Aprovechando la  guerra constante para generar una crisis económica para mantener y controlar a la población ignorante y ocupada con el trabajo .
 
