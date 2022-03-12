@@ -1,9 +1,11 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
+	<style>@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');</style>
+  
     <meta charset="utf-8">
     <!-- Game Title: edit this -->
-    <title>Undum</title>
+    <title>1984</title>
     <!-- End of Game Title -->
 
     <!-- Remove this if you don't use the Tangerine font in your
@@ -34,14 +36,14 @@
     <div id="toolbar">
       <!-- Set this to be a small version of the title, for the
            toolbar on mobile devices. -->
-      <h1>Undum</h1>
+      <h1>1984</h1>
       <div class="nav">
         <a href="#" class="button" id="menu-button">Menu</a>
       </div>
     </div>
     <ul id="menu">
-      <li><a href="#title, #content_wrapper">Story</a></li>
-      <li><a href="#character_panel">Character</a></li>
+      <li><a href="#title, #content_wrapper">Historia</a></li>
+      <li><a href="#character_panel">Personaje</a></li>
       <li><a href="#info_panel">Info</a></li>
     </ul>
 
@@ -51,12 +53,13 @@
         <div id="info_panel" class="tools left">
 
           <!-- Game Background: edit this -->
-          <h1>Undum</h1>
+          <h1>1984</h1>
           <p>
-            Undum is a pure client-side game framework for narrative
-            interactive fiction. It is designed for HTML&#x200A;5 and
-            CSS&#x200A;3. You can read more and download the source
-            code <a href="http://github.com/idmillington/undum">here</a>.
+            Londres es una ciudad lúgubre en la que el gobierno, también conocido como El Partido o Socing,
+			controla de forma asfixiante a los ciudadanos. Se practica una vigilancia masiva y extrema, donde
+			nadie escapa a la vigilancia del Gran Hermano. Una guerra sin fin contra el resto de potencias
+			hace que la economía se mantenga en constante declive.
+			<a href="https://es.wikipedia.org/wiki/1984_(novela)">here</a>.
           </p>
           <!-- End of Game Background -->
 
@@ -66,7 +69,7 @@
         </div>
 
         <div id="character_panel" class="tools right">
-          <h1>Character</h1>
+          <h1>Personaje</h1>
           <div id="character">
             <div id="character_text">
               <div id="character_text_content"></div>
@@ -81,9 +84,9 @@
           <div class="label">
 
             <!-- Game Title: edit this -->
-            <h1>The Undum Tutorial <span class='fancy'>&amp;</span><br>
-              Interactive Example</h1>
-            <h2>by I D Millington</h2>
+            <h1><span class='fancy'>1984</span><br></h1>
+			<h3>Adaptación de la obra de George Orwell</h3>
+            <h2>por Luis René Domínguez Fuentes</h2>
             <!-- End of Game Title -->
 
             <noscript><p class="noscript_message">This game requires 
@@ -142,100 +145,74 @@
          you want to load from your game code. See the
          tutorial.game.js file for details of how this is used. -->
     <div id="content_library">
-      <div id="s_situations">
-        <h1>Situations</h1>
-        <p>
-          In Undum, all interaction takes place in a situation. You
-          can think of it either as a 'Room' in traditional
-          interactive fiction (although it is less flexible than
-          that), or as a 'Page' in a Choose Your Own Adventure book
-          (though it is more flexible than that).
-        </p>
-        <p>
-          At any point, the character is in exactly one situation, and
-          that situation is responsible for everything that happens to
-          them. Situations are chunks of code that generate the output
-          you are reading here. For example, this text was generated
-          by the <em>enter</em> method of the 'situations' situation.
-        </p>
-        <p class='transient'>
-          Let's <a href='todo'>move on again</a>.
-        </p>
-      </div>
-
-      <div id="s_saving">
-        <h1>Saving and Loading</h1>
-        <p>The only piece of the UI we haven't talked about is the
-          'Save' and 'Erase' buttons on the left panel. These are only
-          visible if your browser supports client-side data
-          storage. Clicking 'Save' stores your game, so you can pick
-          it up again later. There is currently no 'Load' button, the
-          game loads when the page loads. There is also no way to save
-          multiple games, and select which one you want to play. These
-          are both things I'd like to change in the future.
-        </p>
-        <p>
-          Potentially your game could generate huge amounts of
-          text. And that would be difficult to store client side
-          (there are unpredictable limits), especially when we move
-          towards having multiple save files. So instead Undum saves
-          your character as the list of links you clicked. Loading a
-          save-file consists of playing through your game again,
-          quickly. This is a beneficial approach for debugging too. It
-          means when you're polishing and correcting typos, you can
-          save and load the game and scroll through the transcript to
-          see your corrections. If we saved the text, your save file
-          would have the error in it and you'd have to manually replay
-          the game to see the correction.
-        </p>
-        <p class='transient'>
-          Let's return to the <a href='hub'>topic list</a>.
-        </p>
-      </div>
-
+		
       <!-- Some situations defined entirely in the HTML -->
-      <div id="hub" class="situation" data-choices="#topic"
-           data-option-text="View Topic List">
-        <h1 class="transient">Topics</h1>
-        <p class="transient">Choose a topic to find out about next. If
-          in doubt, go through the topics in order.</p>
-      </div>
-
-      <div id="implicit" class="situation" data-tags="topic"
-           data-heading="Implicit Choices" data-display-order="7"
+		<div >
+			<ul id="formulario"  class="options">
+				<li>Hombre</li>
+				<li>Mujer</li>
+			</ul>
+		</div>	
+	  
+	  <div id="cuaderno" class="situation" data-tags="topic"
            data-choices="#example">
-        <p>When you're writing an Undum game, you often need certain
-          options to be available only when certain conditions hold. You
-          might have an option to remove a secret panel in a haunted
-          house, but that should only be visible if the character knows
-          where it is. If options are available in lots of situations, it
-          can be very difficult to keep track of what options are
-          allowed, and to produce just the right list of choices.</p>
-        <p>To help with this, Undum can generate a list of situation
-          links for you. It does this in three steps. Firstly, each
-          situation can be given one or more tags, this allows you to
-          easily ask for links to all situations with the 'in-hallway'
-          tag, for example. Secondly, situations can have
-          a <em>canView</em> method, which gets to decide whether that
-          situation should appear. That method can look at the
-          current state of the character to decide whether to appear
-          or not. Thirdly, <em>SimpleSituation</em>s have a <em>choices</em>
-          option. If it is set to one or more tags, it handles the building
-          of the choice list.</p>
-        <p>You've seen this already in the topic list. The topic list
-          is generated automatically. All of the situations in the topic
-          list are always available, however.
-          <span class="transient">So here is an example of
-          automatic options that may change:</span></p>
-      </div>
-
-      <div id="example-choices" class="situation" data-choices="#example">
-        <p class="transient">You can return to the
-          <a href='hub'>Topic List</a> or choose another option from
-          this example:</p>
-      </div>
+			<p>Coges el cuaderno, está muy manoseado: la cubierta casi ha perdido el letrero y las
+			esquinas están rotas. El lápiz tampoco se queda atrás: está casi por la mitad y ha
+			perdido la goma de borrar.</p>
+			<br>
+			<p>Al abrir el cuaderno redescubres una foto de tu esposa. Hace un año que
+			no os veis, ni siquiera sabes si sigue con vida. Recuerdas que os casasteis por
+			conveniencia y deber por y para el partido. No están permitidos los matrimonios por
+			amor y mucho menos mantener relaciones sexuales por placer. Solo está permitido
+			para generar descendencia, con el objetivo de que <b>El Partido</b> pueda moldear a las
+			nuevas generaciones con sus ideales desde que nacen. Convertirlos en espías para
+			que delaten a sus padres si sospechan que estos no son fieles al <b>Socing</b>.</p>
+			<br>
+			<p>Y ese fue el motivo de vuestra separación: muchos fríos y patéticos intentos sin
+			resultados por una causa que no compartíais.</p>
+			<br>
+			<p>Finalmente abres el cuaderno por la última página sin usar y garabateas varias
+			veces: “abajo el partido”.</p>
+			<p class='transient'><a href='salir-calle'>Continuar</a>.</p>
+		</div>
+		
+		
+		<div id="pantalla"  class="situation" data-tags="topic"
+		data-choices="#example">
+			<p>Te detienes a mirarla.</p>
+			<br>
+			<p>Por alguna extraña razón la música y los colores de las imágenes atraen tu atención.
+			En ellas se suceden una serie de lemas junto con imágenes del Gran Hermano:</p>
+			<br>
+			<h2>La Guerra es Paz</h2>
+			<h2>La Libertad es Esclavitud</h2>
+			<h2>La Ignorancia es Fuerza</h2>
+			<br>
+			<p>Ante esta visión no eres capaz de controlarte y poner una expresión de 
+			preocupación y miedo. Te vuelves rápidamente y <a href='vifurcacion'>sigues tu camino.</a></p>
+		</div>
+		
+		<div id="detenido"  class="situation">
+			<p>Al encender las luces piso ves que te esperan tres hombres uniformados de negro 
+			y con placas, son de <b>la Policía del Pensamiento</b>. Dos de ellos están de pie, llevan 
+			casco y no le ves las caras: Rápidamente te inmovilizan. El tercero, un hombre joven, 
+			rubio y apuesto está sentado en el escritorio del salón.</p>
+			<br>
+			<p>―Señor― dice con una voz grave y serena― Queda detenido por 
+			incumplimiento de los principios de <b>Socing</b> y por cometer varios <b>crimentales</b>. Lo 
+			llevaremos al <b>Minimor</b> (Ministerio del Amor) para que responda por ello.</p>
+			<br>
+			<h2>Fin del juego</h2>
+		</div>
+		
+		<div id="no-detenido"  class="situation">
+			<p>Abres la puerta y entras en tu piso. Te sirves un vaso de ginebra. Es el final de otro día y mañana será igual.</p>
+			<br>
+			<h2>Fin del juego</h2>
+		</div>
     </div>
-
+	
+		
     <!-- Load the libraries we depend on -->
     <script type="text/javascript" src="media/js/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="media/js/undum.js"></script>
