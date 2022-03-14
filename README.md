@@ -20,6 +20,12 @@ Obviamente es imposible que alguien pueda alcanzar tal grado de omnipresencia. P
 
 El objetivo del juego es sobrevivir un día en este mundo, como lo haría el protagonista de la novela. Intentando ser los más "normal" posible e intentar actuar de acuerdo con los ideales del Gran Hermano.
 
+### 1.1 Flujo historia
+A continuación se muestra un diagrama con la sucesión de situaciones y los distintos puntos donde puede terminar la historia.
+![Diagrama_historia_2)](https://user-images.githubusercontent.com/99320995/158137034-312e7560-b0a5-48f0-a5c2-188e5803eb30.jpeg)
+
+En caso de que no se visualice correctamente puede verlo a través del siguiente [enlace](https://drive.google.com/drive/folders/1tYzDjfr9LNI4UWrnyz8ZAe7o4mwolvVG?usp=sharing)
+
 ## 2 Tablero de Trello
 En el siguiente enlace se muestra el [tablero](https://trello.com/b/gmS7QoaJ/practica2) de trello.
 ### 2.1 Tareas
@@ -64,3 +70,6 @@ Diagrama que muestra las diferentes ramas con sus respectivos commits y las fech
  
 ![flujo](https://user-images.githubusercontent.com/99320995/158016593-98c36e44-3a10-452e-8c97-dbc30e791f9d.jpg)
 Captura del día 12/03/2022
+
+
+[Subir](https://github.com/UJA-Desarrollo-Agil/d-agil-2021-2022-practica-2-lrdf0001/edit/master/README.md#desarrollo-%C3%A1gil---pr%C3%A1ctica-2-proyecto-individual)
